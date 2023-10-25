@@ -22,7 +22,6 @@ PRODUCT_PACKAGES += \
     libC2D2 \
     libCB \
     libOpenCL \
-    libVkLayer_q3dtools \
     libadreno_app_profiles \
     libadreno_utils \
     libc2d30_bltlib \
@@ -32,6 +31,7 @@ PRODUCT_PACKAGES += \
     libkernelmanager \
     libllvm-glnext \
     libllvm-qcom \
+    libllvm-qgl \
     vendor.qti.qspmhal@1.0_vendor
 
 PRODUCT_PACKAGES += \
