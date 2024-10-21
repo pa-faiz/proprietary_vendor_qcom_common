@@ -8,6 +8,7 @@ soong_namespace {
         "hardware/qcom/display/gralloc",
         "hardware/qcom/display/libdebug",
         "hardware/qcom/wlan/qcwcn",
+        "vendor/qcom/common/vendor/adreno-msmnile",
         "vendor/qcom/common/vendor/adreno-5xx",
         "vendor/qcom/common/vendor/adreno-r",
         "vendor/qcom/common/vendor/adreno-s",
@@ -177,27 +178,6 @@ cc_prebuilt_library_shared {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libqcodec2_platform.so"],
 			shared_libs: ["libutils", "libcutils", "liblog", "libcodec2_vndk", "libqcodec2_base", "libjsoncpp", "libc++", "libc", "libm", "libdl", ],
-		},
-	},
-	compile_multilib: "both",
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-	name: "libqcodec2_utils",
-	owner: "qcom/common",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm: {
-			srcs: ["proprietary/vendor/lib/libqcodec2_utils.so"],
-			shared_libs: ["libutils", "libcutils", "liblog", "libcodec2_vndk", "libqcodec2_base", "libqcodec2_platform", "libhidlbase", "android.hardware.graphics.mapper@3.0", "libc++", "libc", "libm", "libdl", ],
-		},
-		android_arm64: {
-			srcs: ["proprietary/vendor/lib64/libqcodec2_utils.so"],
-			shared_libs: ["libutils", "libcutils", "liblog", "libcodec2_vndk", "libqcodec2_base", "libqcodec2_platform", "libhidlbase", "android.hardware.graphics.mapper@3.0", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "both",

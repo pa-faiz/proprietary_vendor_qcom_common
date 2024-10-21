@@ -28,7 +28,6 @@ PRODUCT_PACKAGES += \
     libqc2audio_hwaudiocodec \
     libqc2audio_platform \
     libqc2audio_swaudiocodec \
-    libqc2audio_utils \
     libqc2colorconvertfilter \
     libqc2filter \
     libqc2vppfilter \

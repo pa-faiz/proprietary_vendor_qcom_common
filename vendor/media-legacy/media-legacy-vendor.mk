@@ -20,7 +20,6 @@ PRODUCT_PACKAGES += \
     libqcodec2_basecodec \
     libqcodec2_core \
     libqcodec2_platform \
-    libqcodec2_utils \
     libqcodec2_v4l2codec \
     libswvdec \
     vendor.qti.hardware.vpp@1.1 \
