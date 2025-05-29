@@ -45,36 +45,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libadaptlaunch",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libadaptlaunch.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "liblearningmodule",
-                "libmeters-ns",
-                "libsqlite",
-                "liblmutils-ns",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libaodoptfeature",
     owner: "qcom",
     strip: {
@@ -95,7 +65,7 @@ cc_prebuilt_library_shared {
                 "libdisplayconfig.qti",
                 "libhidlbase",
                 "libbinder_ndk",
-                "vendor.qti.hardware.display.config-V5-ndk",
+                "vendor.qti.hardware.display.config-V12-ndk",
                 "libc++",
                 "libc",
                 "libm",
@@ -134,7 +104,7 @@ cc_prebuilt_library_shared {
                 "libqti-qesdk-secure",
                 "libbase",
                 "libbinder_ndk",
-                "vendor.qti.hardware.display.config-V5-ndk",
+                "vendor.qti.hardware.display.config-V12-ndk",
                 "android.hardware.thermal-V1-ndk",
                 "android.hidl.allocator@1.0",
                 "vendor.qti.qspmhal-V1-ndk_vendor",
@@ -203,7 +173,7 @@ cc_prebuilt_library_shared {
                 "libsqlite",
                 "libbase",
                 "libbinder_ndk",
-                "vendor.qti.hardware.display.config-V5-ndk",
+                "vendor.qti.hardware.display.config-V12-ndk",
                 "libc++",
                 "libc",
                 "libm",
@@ -234,7 +204,7 @@ cc_prebuilt_library_shared {
                 "libutils",
                 "libtinyxml2",
                 "libsqlite",
-                "libperfgluelayer",
+                "libqti-perfextn-intf",
                 "libc++",
                 "libm",
                 "libdl",
@@ -355,7 +325,7 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libcutils",
                 "liblearningmodule",
-                "libperfgluelayer",
+                "libqti-perfextn-intf",
                 "libprotobuf-cpp-lite",
                 "libcrypto",
                 "libz",
@@ -388,6 +358,7 @@ cc_prebuilt_library_shared {
                 "libcutils",
                 "liblearningmodule",
                 "liblmutils-ns",
+                "libq-perflog",
                 "libc++",
                 "libc",
                 "libm",
@@ -448,7 +419,7 @@ cc_prebuilt_library_shared {
                 "libdisplayconfig.qti",
                 "libhidlbase",
                 "libbinder_ndk",
-                "vendor.qti.hardware.display.config-V5-ndk",
+                "vendor.qti.hardware.display.config-V12-ndk",
                 "libc++",
                 "libc",
                 "libm",
@@ -479,36 +450,6 @@ cc_prebuilt_library_shared {
                 "libcutils",
                 "libxml2",
                 "libqti-util",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libperfgluelayer",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libperfgluelayer.so",
-            ],
-            shared_libs: [
-                "libutils",
-                "liblog",
-                "libq-perflog",
-                "libcutils",
-                "libqti-perfd-client",
-                "libperfconfig",
                 "libc++",
                 "libc",
                 "libm",
@@ -667,6 +608,7 @@ cc_prebuilt_library_shared {
                 "libmeters-ns",
                 "libsqlite",
                 "libmemperfd",
+                "libq-perflog",
                 "libhidlbase",
                 "libutils",
                 "liblmutils-ns",
@@ -699,6 +641,7 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "liblog",
                 "libcutils",
+                "libq-perflog",
                 "liblearningmodule",
                 "libmeters-ns",
                 "libsqlite",
@@ -738,7 +681,7 @@ cc_prebuilt_library_shared {
                 "libhidlbase",
                 "libsqlite",
                 "libbinder_ndk",
-                "vendor.qti.hardware.display.config-V5-ndk",
+                "vendor.qti.hardware.display.config-V12-ndk",
                 "libc++",
                 "libc",
                 "libm",
@@ -765,6 +708,7 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "libcutils",
                 "liblog",
+                "libutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -799,9 +743,13 @@ cc_prebuilt_library_shared {
                 "android.hardware.thermal-V1-ndk",
                 "liblmthermallistner",
                 "libperfconfig",
+                "libqti-perfd",
                 "libqti-qesdk-secure",
                 "libmeters-ns",
                 "liblmutils-ns",
+                "libdisplayconfig.qti",
+                "libbinder_ndk",
+                "vendor.qti.hardware.display.config-V12-ndk",
                 "libc++",
                 "libc",
                 "libm",
@@ -829,74 +777,7 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "vendor.qti.qspmhal-V1-ndk_vendor",
                 "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libqti-iopd-client",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libqti-iopd-client.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "libxml2",
-                "libqti-util",
                 "liblog",
-                "vendor.qti.hardware.iop@2.0_vendor",
-                "libhidlbase",
-                "libsqlite",
-                "libqti-perfd-client",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libqti-iopd",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libqti-iopd.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "libxml2",
-                "libqti-util",
-                "liblog",
-                "libhidlbase",
-                "vendor.qti.hardware.iop@2.0_vendor",
-                "libbase",
-                "libqti-iopd-client",
-                "libqti-perfd-client",
-                "libsqlite",
                 "libc++",
                 "libc",
                 "libm",
@@ -960,13 +841,11 @@ cc_prebuilt_library_shared {
                 "libqti-util",
                 "vendor.qti.hardware.perf2-V1-ndk_vendor",
                 "libbase",
-                "libqti-perfd-client",
                 "libperfconfig",
-                "libperfgluelayer",
                 "libdisplayconfig.qti",
                 "libperfioctl",
                 "libbinder_ndk",
-                "vendor.qti.hardware.display.config-V5-ndk",
+                "vendor.qti.hardware.display.config-V12-ndk",
                 "libc++",
                 "libc",
                 "libm",
@@ -976,6 +855,39 @@ cc_prebuilt_library_shared {
     },
     compile_multilib: "64",
     check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqti-perfextn-intf",
+    owner: "qcom",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqti-perfextn-intf.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libq-perflog",
+                "libutils",
+                "libqti-util",
+                "libperfconfig",
+                "libxml2",
+                "libqti-perfd",
+                "libqti-scenariod",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
     prefer: true,
     soc_specific: true,
 }
@@ -993,6 +905,76 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "liblog",
+                "libutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqti-s3tf",
+    owner: "qcom",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqti-s3tf.so",
+            ],
+            shared_libs: [
+                "libqti-scenariod",
+                "libcutils",
+                "liblog",
+                "libq-perflog",
+                "libutils",
+                "libqti-perfd",
+                "libbinder_ndk",
+                "vendor.qti.hardware.perf2-V1-ndk_vendor",
+                "libperfconfig",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqti-scenariod",
+    owner: "qcom",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqti-scenariod.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libq-perflog",
+                "libutils",
+                "libxml2",
+                "libqti-util",
+                "vendor.qti.hardware.perf2-V1-ndk_vendor",
+                "libbase",
+                "libperfconfig",
+                "libperfioctl",
+                "libbinder_ndk",
+                "libqti-perfd",
                 "libc++",
                 "libc",
                 "libm",
@@ -1115,36 +1097,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libsplh",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libsplh.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "liblearningmodule",
-                "libsqlite",
-                "libmeters-ns",
-                "liblmutils-ns",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libstandbyfeature",
     owner: "qcom",
     strip: {
@@ -1195,7 +1147,7 @@ cc_prebuilt_library_shared {
                 "libdisplayconfig.qti",
                 "libhidlbase",
                 "libbinder_ndk",
-                "vendor.qti.hardware.display.config-V5-ndk",
+                "vendor.qti.hardware.display.config-V12-ndk",
                 "libc++",
                 "libc",
                 "libm",
@@ -1382,38 +1334,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.perf@2.3_vendor",
-    stem: "vendor.qti.hardware.perf@2.3",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.qti.hardware.perf@2.3.so",
-            ],
-            shared_libs: [
-                "vendor.qti.hardware.perf@2.0_vendor",
-                "vendor.qti.hardware.perf@2.1_vendor",
-                "vendor.qti.hardware.perf@2.2_vendor",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "vendor.qti.hardware.power.powermodule-V1-ndk",
     owner: "qcom",
     strip: {
@@ -1523,6 +1443,65 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
+cc_prebuilt_library_shared {
+    name: "vendor.qti.snapdragonServices-V1-ndk",
+    owner: "qcom",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.snapdragonServices-V1-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.snapdragonServices.qape-V1-ndk",
+    owner: "qcom",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.snapdragonServices.qape-V1-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+prebuilt_etc_xml {
+    name: "snapdragon_services.xml",
+    owner: "qcom",
+    src: "proprietary/vendor/etc/vintf/manifest/snapdragon_services.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
+
 prebuilt_etc_xml {
     name: "vendor.qti.hardware.perf2.xml",
     owner: "qcom",
@@ -1560,40 +1539,6 @@ prebuilt_etc_xml {
 }
 
 cc_prebuilt_binary {
-    name: "vendor.qti.hardware.iop@2.0-service",
-    owner: "qcom",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/hw/vendor.qti.hardware.iop@2.0-service",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libbase",
-                "libutils",
-                "libhardware_legacy",
-                "libhardware",
-                "libhidlbase",
-                "libqti-perfd-client",
-                "vendor.qti.hardware.iop@2.0_vendor",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    relative_install_path: "hw",
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
     name: "vendor.qti.hardware.perf2-hal-service",
     owner: "qcom",
     target: {
@@ -1602,6 +1547,8 @@ cc_prebuilt_binary {
                 "proprietary/vendor/bin/hw/vendor.qti.hardware.perf2-hal-service",
             ],
             shared_libs: [
+                "vendor.qti.snapdragonServices-V1-ndk",
+                "vendor.qti.snapdragonServices.qape-V1-ndk",
                 "liblog",
                 "libq-perflog",
                 "libcutils",
@@ -1609,9 +1556,14 @@ cc_prebuilt_binary {
                 "libutils",
                 "libbinder_ndk",
                 "vendor.qti.hardware.perf2-V1-ndk_vendor",
+                "libqti-scenariod",
                 "libperfconfig",
-                "libperfgluelayer",
+                "libqti-perfd",
+                "libqti-util",
+                "libavservices_minijail",
                 "libqti-perfd-client",
+                "android.hardware.thermal-V1-ndk",
+                "libqti-s3tf",
                 "libc++",
                 "libc",
                 "libm",
@@ -1711,6 +1663,36 @@ cc_prebuilt_binary {
                 "vendor.qti.hardware.perf2-V1-ndk_vendor",
                 "libbinder_ndk",
                 "vendor.qti.hardware.power.powermodule-V1-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "snapdragon_services",
+    owner: "qcom",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/snapdragon_services",
+            ],
+            shared_libs: [
+                "liblog",
+                "libbinder_ndk",
+                "vendor.qti.snapdragonServices-V1-ndk",
+                "libbase",
+                "libutils",
+                "libcutils",
                 "libc++",
                 "libc",
                 "libm",
