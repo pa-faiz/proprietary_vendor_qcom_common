@@ -69,7 +69,6 @@
                 <HorizontalResolution>4096</HorizontalResolution>
                 <VerticalResolution>2160</VerticalResolution>
                 <Latency>0</Latency>
-                <MinimumSliceSize>0</MinimumSliceSize>
                 <SliceEncodingParams>0</SliceEncodingParams>
                 <FrameRateControlSupp>1</FrameRateControlSupp>
                 <VideoFps>60</VideoFps>
@@ -84,7 +83,6 @@
                 <HorizontalResolution>4096</HorizontalResolution>
                 <VerticalResolution>2160</VerticalResolution>
                 <Latency>0</Latency>
-                <MinimumSliceSize>0</MinimumSliceSize>
                 <SliceEncodingParams>0</SliceEncodingParams>
                 <FrameRateControlSupp>1</FrameRateControlSupp>
                 <VideoFps>60</VideoFps>
@@ -99,7 +97,6 @@
                 <HorizontalResolution>4096</HorizontalResolution>
                 <VerticalResolution>2160</VerticalResolution>
                 <Latency>0</Latency>
-                <MinimumSliceSize>0</MinimumSliceSize>
                 <SliceEncodingParams>0</SliceEncodingParams>
                 <FrameRateControlSupp>1</FrameRateControlSupp>
                 <VideoFps>60</VideoFps>
@@ -114,7 +111,6 @@
                 <HorizontalResolution>4096</HorizontalResolution>
                 <VerticalResolution>2160</VerticalResolution>
                 <Latency>0</Latency>
-                <MinimumSliceSize>0</MinimumSliceSize>
                 <SliceEncodingParams>0</SliceEncodingParams>
                 <FrameRateControlSupp>1</FrameRateControlSupp>
                 <VideoFps>60</VideoFps>
@@ -129,7 +125,6 @@
                 <HorizontalResolution>4096</HorizontalResolution>
                 <VerticalResolution>2160</VerticalResolution>
                 <Latency>0</Latency>
-                <MinimumSliceSize>0</MinimumSliceSize>
                 <SliceEncodingParams>0</SliceEncodingParams>
                 <FrameRateControlSupp>1</FrameRateControlSupp>
                 <VideoFps>60</VideoFps>
@@ -144,7 +139,6 @@
                 <HorizontalResolution>4096</HorizontalResolution>
                 <VerticalResolution>2160</VerticalResolution>
                 <Latency>0</Latency>
-                <MinimumSliceSize>0</MinimumSliceSize>
                 <SliceEncodingParams>0</SliceEncodingParams>
                 <FrameRateControlSupp>1</FrameRateControlSupp>
                 <VideoFps>60</VideoFps>
@@ -159,7 +153,6 @@
                 <HorizontalResolution>4096</HorizontalResolution>
                 <VerticalResolution>2160</VerticalResolution>
                 <Latency>0</Latency>
-                <MinimumSliceSize>0</MinimumSliceSize>
                 <SliceEncodingParams>0</SliceEncodingParams>
                 <FrameRateControlSupp>1</FrameRateControlSupp>
                 <VideoFps>60</VideoFps>
@@ -757,11 +750,11 @@
 
     <!--
         Compensation delay for audio
-        This is maintain good AV sync in the mux TS A + V stream Recommended
-        value is 150 msec arrived at this number after fine tuning OEMs can
-        change this value in case they want
+        This is to maintain good AV sync in the mux TS A + V stream.
+        Recommended value is 150us arrived at this number after fine tuning.
+        OEMs can change this value in case they want.
     -->
-    <AudioAVSyncDelay>-150</AudioAVSyncDelay>
+    <AudioAVSyncDelayUs>-150</AudioAVSyncDelayUs>
 
     <!--
         To disable/enable AV Sync - 1 or 0
