@@ -6,55 +6,6 @@ soong_namespace {
 }
 
 cc_prebuilt_library_shared {
-    name: "libMotionEngine",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system/lib64/libMotionEngine.so",
-            ],
-            shared_libs: [
-                "libEGL",
-                "libandroid",
-                "liblog",
-                "libm",
-                "libdl",
-                "libc",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libMotionEngineVk",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system/lib64/libMotionEngineVk.so",
-            ],
-            shared_libs: [
-                "libandroid",
-                "liblog",
-                "libm",
-                "libdl",
-                "libc",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libgppextension",
     owner: "qcom",
     strip: {
@@ -134,7 +85,6 @@ cc_prebuilt_library_shared {
                 "libui",
                 "libprocessgroup",
                 "libbinder",
-                "libMotionEngine",
                 "libbinder_ndk",
                 "libgpptxr",
                 "libGLESv2",
@@ -165,7 +115,6 @@ cc_prebuilt_library_shared {
                 "libutils",
                 "libcutils",
                 "liblog",
-                "libMotionEngineVk",
                 "libcodec2_vndk",
                 "libnativewindow",
                 "libhidlbase",

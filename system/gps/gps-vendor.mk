@@ -15,6 +15,7 @@ PRODUCT_COPY_FILES += \
     vendor/qcom/common/system/gps/proprietary/system_ext/etc/permissions/privapp-permissions-com.qualcomm.location.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-com.qualcomm.location.xml
 
 PRODUCT_PACKAGES += \
+    libloc2jnibridge \
     libqcc \
     libqcc_file_agent_sys \
     libqcc_netstats \
@@ -28,6 +29,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.qccsyshal_aidl-V1-ndk \
     vendor.qti.qccsyshal_aidl-halimpl \
     vendor.qti.qccvndhal_aidl-V1-ndk \
+    vendor.qti.qccvndhal_aidl-V2-ndk \
     QCC \
     com.qualcomm.location \
     com.qti.location.sdk \

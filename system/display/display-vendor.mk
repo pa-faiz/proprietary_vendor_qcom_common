@@ -12,8 +12,6 @@ PRODUCT_COPY_FILES += \
     vendor/qcom/common/system/display/proprietary/system/etc/seccomp_policy/gppservice.policy:$(TARGET_COPY_OUT_SYSTEM)/etc/seccomp_policy/gppservice.policy
 
 PRODUCT_PACKAGES += \
-    libMotionEngine \
-    libMotionEngineVk \
     libgppextension \
     libgpphexlpsession \
     libgpppreprocessing \
