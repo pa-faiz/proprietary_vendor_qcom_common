@@ -3,9 +3,6 @@
 //
 
 soong_namespace {
-    imports: [
-        "hardware/qcom/display/libdebug",
-    ],
 }
 
 cc_prebuilt_library_shared {
