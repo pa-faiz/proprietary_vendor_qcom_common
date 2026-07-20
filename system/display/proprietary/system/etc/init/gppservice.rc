@@ -11,3 +11,9 @@ service vendor.gppservice /system/bin/gppservice
     # start only when requested (comment below to start service at boot)
     disabled
 
+on property:vendor.gpp.frc.enable=22
+    start vendor.gppservice
+
+on property:vendor.gpp.frc.enable=0x22
+    start vendor.gppservice
+

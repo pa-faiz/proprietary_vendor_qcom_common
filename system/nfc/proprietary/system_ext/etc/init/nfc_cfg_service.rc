@@ -1,0 +1,7 @@
+service nfc_cfg_service /system_ext/bin/nfc_cfg_service
+    class core
+    user nfc
+    group system
+    oneshot
+    on early-init
+    start nfc_cfg_service

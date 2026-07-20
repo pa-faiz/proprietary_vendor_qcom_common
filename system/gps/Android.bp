@@ -9,7 +9,7 @@ soong_namespace {
 }
 
 cc_prebuilt_library_shared {
-    name: "libloc2jnibridge",
+    name: "vendor.qti.gnss-V8-cpp",
     owner: "qcom",
     strip: {
         none: true,
@@ -17,13 +17,11 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/system_ext/lib64/libloc2jnibridge.so",
+                "proprietary/system/lib64/vendor.qti.gnss-V8-cpp.so",
             ],
             shared_libs: [
+                "libbinder",
                 "libutils",
-                "libqmi_cci_system",
-                "liblog",
-                "libcutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -33,7 +31,6 @@ cc_prebuilt_library_shared {
     },
     compile_multilib: "64",
     prefer: true,
-    system_ext_specific: true,
 }
 
 cc_prebuilt_library_shared {
@@ -513,6 +510,36 @@ prebuilt_etc_xml {
     src: "proprietary/system_ext/etc/vintf/manifest/vendor.qti.qccsyshal_aidl-service.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
+    system_ext_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "loc_sys_service",
+    owner: "qcom",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/bin/loc_sys_service",
+            ],
+            shared_libs: [
+                "libbase",
+                "libcutils",
+                "liblog",
+                "libbinder",
+                "libutils",
+                "vendor.qti.gnss-V8-cpp",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
     system_ext_specific: true,
 }
 

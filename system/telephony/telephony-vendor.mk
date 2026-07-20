@@ -20,6 +20,7 @@ PRODUCT_COPY_FILES += \
     vendor/qcom/common/system/telephony/proprietary/system/etc/permissions/uimremoteserver.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/uimremoteserver.xml \
     vendor/qcom/common/system/telephony/proprietary/system_ext/etc/dpm/dpm.conf:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/dpm/dpm.conf \
     vendor/qcom/common/system/telephony/proprietary/system_ext/etc/init/dpmd.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/dpmd.rc \
+    vendor/qcom/common/system/telephony/proprietary/system_ext/etc/init/imsvtdaemon.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/imsvtdaemon.rc \
     vendor/qcom/common/system/telephony/proprietary/system_ext/etc/init/tcmd.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/tcmd.rc \
     vendor/qcom/common/system/telephony/proprietary/system_ext/etc/permissions/com.qti.dpmframework.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.qti.dpmframework.xml \
     vendor/qcom/common/system/telephony/proprietary/system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml \
@@ -35,6 +36,7 @@ PRODUCT_COPY_FILES += \
     vendor/qcom/common/system/telephony/proprietary/system_ext/etc/permissions/vendor.qti.ims.rcsservice.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/vendor.qti.ims.rcsservice.xml \
     vendor/qcom/common/system/telephony/proprietary/system_ext/etc/permissions/vendor.qti.imsdatachannel.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/vendor.qti.imsdatachannel.xml \
     vendor/qcom/common/system/telephony/proprietary/system_ext/etc/permissions/vendor.qti.imsdcservice.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/vendor.qti.imsdcservice.xml \
+    vendor/qcom/common/system/telephony/proprietary/system_ext/etc/seccomp_policy/imsvtdaemon.policy:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/seccomp_policy/imsvtdaemon.policy \
     vendor/qcom/common/system/telephony/proprietary/system_ext/etc/seccomp_policy/tcmd.policy:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/seccomp_policy/tcmd.policy \
     vendor/qcom/common/system/telephony/proprietary/system_ext/etc/sysconfig/qti_telephony_system_packages_config.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_telephony_system_packages_config.xml \
     vendor/qcom/common/system/telephony/proprietary/system_ext/etc/sysconfig/qti_whitelist_system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_whitelist_system_ext.xml \
@@ -66,6 +68,7 @@ PRODUCT_PACKAGES += \
     lib-imsvt \
     lib-imsvtextutils \
     lib-imsvtutils \
+    libSurfaceUtil_jni \
     libdiag_system.qti \
     libdiag_system \
     libdiagatbparser_system \
@@ -76,12 +79,10 @@ PRODUCT_PACKAGES += \
     libembmsmmosal \
     libembmsmmparser_lite \
     libembmstinyxml \
-    libimscamera_jni \
     libimsmedia_jni \
     libjnihelpers \
     libmink-sock-native-api \
     libminkipcbinder_system \
-    libminksocket_system \
     libmsp \
     libmwqemiptablemgr \
     libqmi_cci_system \
@@ -90,6 +91,7 @@ PRODUCT_PACKAGES += \
     libupdateprof.qti \
     vendor.qti.ImsRtpService-V1-ndk \
     vendor.qti.ImsRtpService-V2-ndk \
+    vendor.qti.ImsVtService-ndk \
     vendor.qti.data.dmapconsent-V1-ndk \
     vendor.qti.data.dmapconsent-V2-ndk \
     vendor.qti.data.factory@1.0 \
@@ -104,6 +106,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.data.factory@2.8 \
     vendor.qti.data.factoryservice-V1-ndk \
     vendor.qti.data.factoryservice-V2-ndk \
+    vendor.qti.data.factoryservice-V3-ndk \
     vendor.qti.data.mwqem@1.0 \
     vendor.qti.data.mwqemaidlservice-V1-ndk \
     vendor.qti.data.slm@1.0 \
@@ -116,6 +119,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.data.cne.internal.server@1.2 \
     vendor.qti.hardware.data.cne.internal.server@1.3 \
     vendor.qti.hardware.data.cneaidlservice.internal.api-V1-ndk \
+    vendor.qti.hardware.data.cneaidlservice.internal.api-V2-ndk \
     vendor.qti.hardware.data.cneaidlservice.internal.constants-V1-ndk \
     vendor.qti.hardware.data.cneaidlservice.internal.server-V1-ndk \
     vendor.qti.hardware.data.cneaidlservice.internal.server-V2-ndk \
@@ -219,20 +223,16 @@ PRODUCT_PACKAGES += \
     vendor.qti.latencyaidlservice-V1-ndk \
     vendor.qti.mstatservice@1.0 \
     ConferenceDialer \
-    DeviceStatisticsService \
-    datastatusnotification \
     remoteSimLockAuthentication \
     remotesimlockservice \
     uimgbaservice \
     uimlpaservice \
     uimremoteclient \
     uimremoteserver \
-    AtFwd2 \
     DeviceInfo \
     DynamicDDSService \
     ImsDataChannelService \
     ImsRcsService \
-    QtiTelephonyService \
     SimContact \
     atfwd \
     uceShimService \
@@ -269,6 +269,7 @@ PRODUCT_PACKAGES += \
     dpmapi \
     qcrilhook \
     qti-telephony-common \
+    vendor.qti.ImsVtService-java \
     vendor.qti.data.dmapconsent-V1-java \
     vendor.qti.data.dmapconsent-V2-java \
     vendor.qti.data.factory-V1.0-java \
@@ -283,6 +284,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.data.factory-V2.8-java \
     vendor.qti.data.factoryservice-V1-java \
     vendor.qti.data.factoryservice-V2-java \
+    vendor.qti.data.factoryservice-V3-java \
     vendor.qti.data.mwqem-V1.0-java \
     vendor.qti.data.mwqemaidlservice-V1-java \
     vendor.qti.data.slm-V1.0-java \
@@ -294,6 +296,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.data.cne.internal.server-V1.2-java \
     vendor.qti.hardware.data.cne.internal.server-V1.3-java \
     vendor.qti.hardware.data.cneaidlservice.internal.api-V1-java \
+    vendor.qti.hardware.data.cneaidlservice.internal.api-V2-java \
     vendor.qti.hardware.data.cneaidlservice.internal.constants-V1-java \
     vendor.qti.hardware.data.cneaidlservice.internal.server-V1-java \
     vendor.qti.hardware.data.cneaidlservice.internal.server-V2-java \
@@ -362,9 +365,9 @@ PRODUCT_PACKAGES += \
     diag_dci_sample_system \
     diag_mdlog_system \
     dpmd \
+    imsvtdaemon \
     tcmd \
     test_diag_system
 
 PRODUCT_PACKAGES += \
-    system_ext_priv-app_ims_lib_arm64_libimscamera_jni_so \
     system_ext_priv-app_ims_lib_arm64_libimsmedia_jni_so

@@ -660,7 +660,6 @@ cc_prebuilt_library_shared {
                 "lib-imsvideocodec",
                 "libmediandk",
                 "libnativewindow",
-                "libion",
                 "libdmabufheap",
                 "lib-imsvtutils",
                 "libandroid",
@@ -733,6 +732,34 @@ cc_prebuilt_library_shared {
                 "libcutils",
                 "liblog",
                 "libdiag_system",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libSurfaceUtil_jni",
+    owner: "qcom",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libSurfaceUtil_jni.so",
+            ],
+            shared_libs: [
+                "libbinder",
+                "libgui",
+                "libnativehelper",
+                "libutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -1037,34 +1064,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libimscamera_jni",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/libimscamera_jni.so",
-            ],
-            shared_libs: [
-                "libnativehelper",
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libimsmedia_jni",
     owner: "qcom",
     strip: {
@@ -1133,7 +1132,6 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "libminkipcbinder_system",
                 "liblog",
-                "libminksocket_system",
                 "libjnihelpers",
                 "libc++",
                 "libc",
@@ -1143,6 +1141,7 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
+    check_elf_files: false,
     prefer: true,
     system_ext_specific: true,
 }
@@ -1166,32 +1165,6 @@ cc_prebuilt_library_shared {
                 "vendor.qti.hardware.minkipcbinder-V1-ndk",
                 "libbinder",
                 "libjsoncpp",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libminksocket_system",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/libminksocket_system.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
                 "libc++",
                 "libc",
                 "libm",
@@ -1432,6 +1405,32 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "libbinder_ndk",
                 "android.hardware.common-V2-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.ImsVtService-ndk",
+    owner: "qcom",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/vendor.qti.ImsVtService-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "libnativewindow",
                 "libc++",
                 "libc",
                 "libm",
@@ -2005,6 +2004,39 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "vendor.qti.data.factoryservice-V3-ndk",
+    owner: "qcom",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/vendor.qti.data.factoryservice-V3-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "vendor.qti.hardware.data.dynamicddsaidlservice-V1-ndk",
+                "vendor.qti.hardware.data.qmiaidlservice-V1-ndk",
+                "vendor.qti.hardware.data.lceaidlservice-V1-ndk",
+                "vendor.qti.hardware.data.flowaidlservice-V1-ndk",
+                "vendor.qti.hardware.data.cneaidlservice.internal.api-V2-ndk",
+                "vendor.qti.hardware.data.cneaidlservice.internal.server-V2-ndk",
+                "vendor.qti.latencyaidlservice-V1-ndk",
+                "vendor.qti.data.mwqemaidlservice-V1-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.qti.data.mwqem@1.0",
     owner: "qcom",
     strip: {
@@ -2327,6 +2359,32 @@ cc_prebuilt_library_shared {
         android_arm64: {
             srcs: [
                 "proprietary/system_ext/lib64/vendor.qti.hardware.data.cneaidlservice.internal.api-V1-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "vendor.qti.hardware.data.cneaidlservice.internal.constants-V1-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.data.cneaidlservice.internal.api-V2-ndk",
+    owner: "qcom",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/vendor.qti.hardware.data.cneaidlservice.internal.api-V2-ndk.so",
             ],
             shared_libs: [
                 "libbinder_ndk",
@@ -5315,28 +5373,6 @@ android_app_import {
 }
 
 android_app_import {
-    name: "DeviceStatisticsService",
-    owner: "qcom",
-    apk: "proprietary/product/app/DeviceStatisticsService/DeviceStatisticsService.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-    product_specific: true,
-}
-
-android_app_import {
-    name: "datastatusnotification",
-    owner: "qcom",
-    apk: "proprietary/product/app/datastatusnotification/datastatusnotification.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-    product_specific: true,
-}
-
-android_app_import {
     name: "remoteSimLockAuthentication",
     owner: "qcom",
     apk: "proprietary/product/app/remoteSimLockAuthentication/remoteSimLockAuthentication.apk",
@@ -5403,17 +5439,6 @@ android_app_import {
 }
 
 android_app_import {
-    name: "AtFwd2",
-    owner: "qcom",
-    apk: "proprietary/system_ext/app/AtFwd2/AtFwd2.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-    system_ext_specific: true,
-}
-
-android_app_import {
     name: "DeviceInfo",
     owner: "qcom",
     apk: "proprietary/system_ext/app/DeviceInfo/DeviceInfo.apk",
@@ -5450,17 +5475,6 @@ android_app_import {
     name: "ImsRcsService",
     owner: "qcom",
     apk: "proprietary/system_ext/app/ImsRcsService/ImsRcsService.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-    system_ext_specific: true,
-}
-
-android_app_import {
-    name: "QtiTelephonyService",
-    owner: "qcom",
-    apk: "proprietary/system_ext/app/QtiTelephonyService/QtiTelephonyService.apk",
     certificate: "platform",
     dex_preopt: {
         enabled: false,
@@ -5809,6 +5823,15 @@ dex_import {
 }
 
 dex_import {
+    name: "vendor.qti.ImsVtService-java",
+    owner: "qcom",
+    jars: [
+        "proprietary/system_ext/framework/vendor.qti.ImsVtService-java.jar",
+    ],
+    system_ext_specific: true,
+}
+
+dex_import {
     name: "vendor.qti.data.dmapconsent-V1-java",
     owner: "qcom",
     jars: [
@@ -5935,6 +5958,15 @@ dex_import {
 }
 
 dex_import {
+    name: "vendor.qti.data.factoryservice-V3-java",
+    owner: "qcom",
+    jars: [
+        "proprietary/system_ext/framework/vendor.qti.data.factoryservice-V3-java.jar",
+    ],
+    system_ext_specific: true,
+}
+
+dex_import {
     name: "vendor.qti.data.mwqem-V1.0-java",
     owner: "qcom",
     jars: [
@@ -6029,6 +6061,15 @@ dex_import {
     owner: "qcom",
     jars: [
         "proprietary/system_ext/framework/vendor.qti.hardware.data.cneaidlservice.internal.api-V1-java.jar",
+    ],
+    system_ext_specific: true,
+}
+
+dex_import {
+    name: "vendor.qti.hardware.data.cneaidlservice.internal.api-V2-java",
+    owner: "qcom",
+    jars: [
+        "proprietary/system_ext/framework/vendor.qti.hardware.data.cneaidlservice.internal.api-V2-java.jar",
     ],
     system_ext_specific: true,
 }
@@ -6720,6 +6761,46 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
+    name: "imsvtdaemon",
+    owner: "qcom",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/bin/imsvtdaemon",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libdiag_system",
+                "libutils",
+                "libbinder_ndk",
+                "libbinder",
+                "vendor.qti.ImsVtService-ndk",
+                "libavservices_minijail",
+                "libnativewindow",
+                "libgui",
+                "lib-imsvt",
+                "lib-imsvideocodec",
+                "libmediandk",
+                "libdmabufheap",
+                "lib-imsvtutils",
+                "libandroid",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_binary {
     name: "tcmd",
     owner: "qcom",
     target: {
@@ -6778,13 +6859,6 @@ cc_prebuilt_binary {
     },
     prefer: true,
     system_ext_specific: true,
-}
-
-install_symlink {
-    name: "system_ext_priv-app_ims_lib_arm64_libimscamera_jni_so",
-    system_ext_specific: true,
-    installed_location: "priv-app/ims/lib/arm64/libimscamera_jni.so",
-    symlink_target: "/system_ext/lib64/libimscamera_jni.so",
 }
 
 install_symlink {

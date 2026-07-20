@@ -6,6 +6,7 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/common/system/gps
 
 PRODUCT_COPY_FILES += \
+    vendor/qcom/common/system/gps/proprietary/system_ext/etc/init/loc_sys_service.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/loc_sys_service.rc \
     vendor/qcom/common/system/gps/proprietary/system_ext/etc/init/vendor.qti.hardware.qccsyshal@1.2-service.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/vendor.qti.hardware.qccsyshal@1.2-service.rc \
     vendor/qcom/common/system/gps/proprietary/system_ext/etc/init/vendor.qti.qccsyshal_aidl-service.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/vendor.qti.qccsyshal_aidl-service.rc \
     vendor/qcom/common/system/gps/proprietary/system_ext/etc/permissions/com.qti.location.sdk.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.qti.location.sdk.xml \
@@ -15,7 +16,7 @@ PRODUCT_COPY_FILES += \
     vendor/qcom/common/system/gps/proprietary/system_ext/etc/permissions/privapp-permissions-com.qualcomm.location.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-com.qualcomm.location.xml
 
 PRODUCT_PACKAGES += \
-    libloc2jnibridge \
+    vendor.qti.gnss-V8-cpp \
     libqcc \
     libqcc_file_agent_sys \
     libqcc_netstats \
@@ -34,5 +35,6 @@ PRODUCT_PACKAGES += \
     com.qualcomm.location \
     com.qti.location.sdk \
     vendor.qti.qccsyshal_aidl-service.xml \
+    loc_sys_service \
     qccsyshal@1.2-service \
     qccsyshal_aidl-service

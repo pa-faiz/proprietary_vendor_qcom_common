@@ -50,7 +50,7 @@ cc_prebuilt_library_shared {
                 "libgui",
                 "libui",
                 "libbinder",
-                "vendor.qti.hardware.hexlp-V2-ndk",
+                "vendor.qti.hardware.hexlp-V3-ndk",
                 "libbinder_ndk",
                 "libgpppreprocessing",
                 "libnativewindow",
@@ -165,7 +165,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.hexlp-V2-ndk",
+    name: "vendor.qti.hardware.hexlp-V3-ndk",
     owner: "qcom",
     strip: {
         none: true,
@@ -173,7 +173,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/system/lib64/vendor.qti.hardware.hexlp-V2-ndk.so",
+                "proprietary/system/lib64/vendor.qti.hardware.hexlp-V3-ndk.so",
             ],
             shared_libs: [
                 "libbinder_ndk",

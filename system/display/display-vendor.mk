@@ -17,7 +17,7 @@ PRODUCT_PACKAGES += \
     libgpppreprocessing \
     libgpptxr \
     libgppvppgfrcplussession \
-    vendor.qti.hardware.hexlp-V2-ndk \
+    vendor.qti.hardware.hexlp-V3-ndk \
     libsd_sdk_display.qti \
     libsdm-disp-apis.qti \
     vendor.display.color@1.0 \

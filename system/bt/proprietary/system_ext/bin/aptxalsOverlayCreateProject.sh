@@ -23,7 +23,7 @@ EOM1
 cat > aptxalsOverlay/AndroidManifest.xml <<'EOM2'
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
                 package="com.qualcomm.qtil.aptxalsOverlay">
-                <uses-sdk android:targetSdkVersion="34" />
+                <uses-sdk android:targetSdkVersion="36" />
                 <overlay android:targetPackage="com.qualcomm.qtil.aptxals"
                  android:priority="1" android:isStatic="true"/>
 </manifest>
