@@ -35,9 +35,6 @@ PRODUCT_PACKAGES += \
     libqti-perfd-client \
     libstreamparser \
     libvideoutils \
-    vendor.qti.hardware.perf@2.0_vendor \
-    vendor.qti.hardware.perf@2.1_vendor \
-    vendor.qti.hardware.perf@2.2_vendor \
     c2_manifest_vendor.xml \
     qconfigservice \
     vendor.qti.media.c2@1.0-service

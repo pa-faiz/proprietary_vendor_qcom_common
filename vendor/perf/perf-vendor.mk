@@ -55,10 +55,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.iop@1.0 \
     vendor.qti.hardware.iop@2.0_vendor \
     vendor.qti.hardware.perf2-V1-ndk_vendor \
-    vendor.qti.hardware.perf@2.0_vendor \
-    vendor.qti.hardware.perf@2.1_vendor \
-    vendor.qti.hardware.perf@2.2_vendor \
-    vendor.qti.hardware.perf@2.3_vendor \
     vendor.qti.hardware.power.powermodule-V1-ndk \
     vendor.qti.memory.pasrmanager-V1-ndk \
     vendor.qti.qspmhal-V1-ndk_vendor \

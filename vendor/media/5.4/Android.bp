@@ -884,7 +884,7 @@ cc_prebuilt_library_shared {
                 "libcutils",
                 "libutils",
                 "liblog",
-                "vendor.qti.hardware.perf@2.2_vendor",
+                "vendor.qti.hardware.perf@2.2",
                 "libhidlbase",
                 "libc++",
                 "libc",
@@ -937,96 +937,6 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib/libvideoutils.so",
             ],
             shared_libs: [
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.perf@2.0_vendor",
-    stem: "vendor.qti.hardware.perf@2.0",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/vendor.qti.hardware.perf@2.0.so",
-            ],
-            shared_libs: [
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.perf@2.1_vendor",
-    stem: "vendor.qti.hardware.perf@2.1",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/vendor.qti.hardware.perf@2.1.so",
-            ],
-            shared_libs: [
-                "vendor.qti.hardware.perf@2.0_vendor",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.perf@2.2_vendor",
-    stem: "vendor.qti.hardware.perf@2.2",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/vendor.qti.hardware.perf@2.2.so",
-            ],
-            shared_libs: [
-                "vendor.qti.hardware.perf@2.0_vendor",
-                "vendor.qti.hardware.perf@2.1_vendor",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
                 "libc++",
                 "libc",
                 "libm",
