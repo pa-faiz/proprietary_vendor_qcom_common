@@ -870,7 +870,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libqti-perfd-client",
+    name: "libqti-perfd-client_vendor_32",
+    stem: "libqti-perfd-client",
     owner: "qcom",
     strip: {
         none: true,

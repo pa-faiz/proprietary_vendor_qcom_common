@@ -32,7 +32,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.vpp@1.3 \
     vendor.qti.hardware.vpp@2.0 \
     libfastcrc \
-    libqti-perfd-client \
+    libqti-perfd-client_vendor_32 \
     libstreamparser \
     libvideoutils \
     c2_manifest_vendor.xml \
