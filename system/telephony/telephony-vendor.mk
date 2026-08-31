@@ -222,6 +222,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.latency@2.3 \
     vendor.qti.latencyaidlservice-V1-ndk \
     vendor.qti.mstatservice@1.0 \
+    vendor.qti.snapdragonServices-V2-ndk \
     ConferenceDialer \
     remoteSimLockAuthentication \
     remotesimlockservice \

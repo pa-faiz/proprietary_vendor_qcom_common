@@ -76,3 +76,6 @@ sched_get_priority_max: 1
 getdents64: 1
 uname: 1
 clock_gettime: 1
+pipe2: 1
+bind: 1
+setsockopt: 1

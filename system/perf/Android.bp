@@ -362,53 +362,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libqape.qti",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/system_ext/lib/libqape.qti.so",
-            ],
-            shared_libs: [
-                "libnativehelper",
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libbinder",
-                "libhidlbase",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/libqape.qti.so",
-            ],
-            shared_libs: [
-                "libnativehelper",
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libbinder",
-                "libhidlbase",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libqspm-mem-utils",
     owner: "qcom",
     strip: {
@@ -435,49 +388,6 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "vendor.qti.qspmhal-V1-ndk",
                 "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libqspmsvc",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/system_ext/lib/libqspmsvc.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libbinder",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/libqspmsvc.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libbinder",
                 "libc++",
                 "libc",
                 "libm",
@@ -1141,41 +1051,10 @@ cc_prebuilt_binary {
                 "libbinder",
                 "libavservices_minijail",
                 "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "qspmsvc",
-    owner: "qcom",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/bin/qspmsvc",
-            ],
-            shared_libs: [
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libbinder_ndk",
-                "libbinder",
                 "libbase",
-                "vendor.qti.qspmhal@1.0",
-                "vendor.qti.qspmhal-V1-ndk",
+                "libbinder_ndk",
                 "android.hardware.thermal@1.0",
                 "android.hardware.thermal@2.0",
-                "android.hidl.memory@1.0",
                 "libhidlmemory",
                 "libhidlbase",
                 "libc++",

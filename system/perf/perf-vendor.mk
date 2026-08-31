@@ -9,7 +9,6 @@ PRODUCT_COPY_FILES += \
     vendor/qcom/common/system/perf/proprietary/system/etc/permissions/com.qualcomm.qti.Performance.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.qualcomm.qti.Performance.xml \
     vendor/qcom/common/system/perf/proprietary/system/etc/permissions/com.qualcomm.qti.UxPerformance.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.qualcomm.qti.UxPerformance.xml \
     vendor/qcom/common/system/perf/proprietary/system_ext/etc/init/perfservice.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/perfservice.rc \
-    vendor/qcom/common/system/perf/proprietary/system_ext/etc/init/qspmsvc.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/qspmsvc.rc \
     vendor/qcom/common/system/perf/proprietary/system_ext/etc/perf/scaler_params.pb:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/perf/scaler_params.pb \
     vendor/qcom/common/system/perf/proprietary/system_ext/etc/perf/wlc_model.tflite:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/perf/wlc_model.tflite \
     vendor/qcom/common/system/perf/proprietary/system_ext/etc/seccomp_policy/perfservice.policy:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/seccomp_policy/perfservice.policy
@@ -23,9 +22,7 @@ PRODUCT_PACKAGES += \
     liblayerext.qti \
     libpenguin \
     libpenguin_impl \
-    libqape.qti \
     libqspm-mem-utils \
-    libqspmsvc \
     libqti-MemHal-client-system \
     libqti-at \
     libqti-iopd-client_system \
@@ -44,5 +41,4 @@ PRODUCT_PACKAGES += \
     QPerformance \
     QXPerformance \
     UxPerformance \
-    perfservice \
-    qspmsvc
+    perfservice
