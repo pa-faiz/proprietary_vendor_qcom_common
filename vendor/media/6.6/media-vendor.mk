@@ -10,16 +10,17 @@ PRODUCT_COPY_FILES += \
     vendor/qcom/common/vendor/media/6.6/proprietary/vendor/etc/init/qconfig.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/qconfig.rc \
     vendor/qcom/common/vendor/media/6.6/proprietary/vendor/etc/init/vendor.qti.media.c2@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.media.c2@1.0-service.rc \
     vendor/qcom/common/vendor/media/6.6/proprietary/vendor/etc/init/vendor.qti.media.c2audio@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.media.c2audio@1.0-service.rc \
-    vendor/qcom/common/vendor/media/6.6/proprietary/vendor/etc/seccomp_policy/c2audio.vendor.base-arm64.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/c2audio.vendor.base-arm64.policy \
-    vendor/qcom/common/vendor/media/6.6/proprietary/vendor/etc/seccomp_policy/c2audio.vendor.ext-arm64.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/c2audio.vendor.ext-arm64.policy \
+    vendor/qcom/common/vendor/media/6.6/proprietary/vendor/etc/media_sun/video_system_specs.json:$(TARGET_COPY_OUT_VENDOR)/etc/media_sun/video_system_specs.json \
     vendor/qcom/common/vendor/media/6.6/proprietary/vendor/etc/seccomp_policy/codec2.vendor.base-arm64.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/codec2.vendor.base-arm64.policy \
     vendor/qcom/common/vendor/media/6.6/proprietary/vendor/etc/seccomp_policy/codec2.vendor.ext-arm64.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/codec2.vendor.ext-arm64.policy
 
 PRODUCT_PACKAGES += \
+    libAlacSwDec \
+    libApeSwDec \
+    libEvrcSwCodec \
+    libFlacSwDec \
     libQcelp13SwCodec \
     libdsd2pcm \
-    libfastcrc \
-    libmmosal_vendor \
     libqc2audio_base \
     libqc2audio_basecodec \
     libqc2audio_core \
@@ -43,6 +44,7 @@ PRODUCT_PACKAGES += \
     libqcodec2_v4l2codec \
     libqconfigclient \
     libstreamparser \
+    libvideooptfeature \
     libvideotxr \
     libvideoutils \
     qti.video.utils.videobufferlayout \
@@ -56,5 +58,4 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.qconfig-service.xml \
     qconfigservice \
     vendor.qti.media.c2@1.0-service \
-    vendor.qti.media.c2audio@1.0-service \
-    init.qti.media
+    vendor.qti.media.c2audio@1.0-service
